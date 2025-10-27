@@ -23,9 +23,14 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
+$env = parse_ini_file("../.env");
 // Application configuration
 $config = Config::create(
-    ...parse_ini_file("../.env")
+    $env['DB_HOST'],
+    $env['DB_PORT'],
+    $env['DB_NAME'],
+    $env['DB_USER'],
+    $env['DB_PASS']
 );
 
 // Create containerless Slim app
