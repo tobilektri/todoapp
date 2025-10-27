@@ -1,0 +1,10 @@
+   # .env
+   Write the env-file `.env.local` to the path `/home/deploy/deployments/TodoAPP/.env.local` of your server.
+   Example values:
+   ```
+   DB_HOST="yourhost.com"
+   DB_PORT="1234"
+   DB_NAME="yourDB"
+   DB_USER="dbUser"
+   DB_PASS="super$ecureP!ssword"
+   ```
