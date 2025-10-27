@@ -13,14 +13,19 @@ class Config {
         private readonly string $dbPass
     ) {}
 
-    public static function create(): self {
-        $ENV = parse_ini_file(".env");
+    public static function create(
+        string $dbHost,
+        int $dbPort,
+        string $dbName,
+        string $dbUser,
+        string $dbPass
+    ): self {
         return new self(
-            $ENV["DB_HOST"],
-            $ENV["DB_PORT"],
-            $ENV["DB_NAME"],
-            $ENV["DB_USER"],
-            $ENV["DB_PASS"]
+            $dbHost,
+            $dbPort,
+            $dbName,
+            $dbUser,
+            $dbPass
         );
     }
 

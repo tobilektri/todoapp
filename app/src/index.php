@@ -24,7 +24,9 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 // Application configuration
-$config = Config::create();
+$config = Config::create(
+    ...parse_ini_file("../.env")
+);
 
 // Create containerless Slim app
 $app = AppFactory::create();
